@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './sass/demo.scss';
+import SlideShowBasic from './components/SlideShowBasic';
+import SlideShow from './components/SlideShow';
+import Welcome from './components/basicState';
+
+const name = 'Andrew';
 
 function App() {
   return (
@@ -19,6 +24,18 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <SlideShowBasic/>
+      <br/>
+      <br/>
+      <br/>
+      <SlideShow/>
+      <br/>
+      <br/>
+      <br/>
+      <Welcome
+        name={name}
+      />
     </div>
   );
 }

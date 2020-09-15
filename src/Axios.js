@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Axios = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [posts, setPosts] = useState([]);
 
-  axios
-    .get("https://admin.react-press.net/wp-json/wp/v2/posts")
-    .then((res) => {
-      setPosts(res.data);
-      setIsLoaded(true);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  useEffect(() => {
+    axios
+      .get("https://admin.react-press.net/wp-json/wp/v2/posts")
+      .then((res) => {
+        setPosts(res.data);
+        setIsLoaded(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [isLoaded, posts]);
+
   if (isLoaded) {
     return <h1>{posts[0].title.rendered}</h1>;
   }

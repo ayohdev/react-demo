@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../components/modules/Hero";
 
-const Single = () => {
+const Post = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   const [title, setTitle] = useState("My Hero");
 
   useEffect(() => {
-    setTitle("My Hero 1");
+    setTitle("My Hero 2");
     setIsLoaded(true);
   });
 
@@ -17,4 +17,4 @@ const Single = () => {
   );
 };
 
-export default Single;
+export default Post;

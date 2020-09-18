@@ -8,7 +8,7 @@ const Single = () => {
   useEffect(() => {
     setTitle("My Hero 1");
     setIsLoaded(true);
-  });
+  }, [isLoaded]);
 
   return (
     <React.Fragment>

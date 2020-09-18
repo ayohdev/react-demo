@@ -8,7 +8,7 @@ const Post = () => {
   useEffect(() => {
     setTitle("My Hero 2");
     setIsLoaded(true);
-  });
+  }, [isLoaded]);
 
   return (
     <React.Fragment>
